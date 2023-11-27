@@ -1,19 +1,14 @@
 "use strict";
-const app = document.querySelector("#app");
 import { displayGrid } from "./helpers";
+const app = document.querySelector("#app");
+const circleBtn = document.querySelector('#circleBtn')
+const colorModeBtn = document.querySelector('#colorModeBtn')
+const rainbowModeBtn = document.querySelector('#rainbowModeBtn')
+const eraserBtn = document.querySelector('#eraserBtn')
+const clearBtn = document.querySelector('#clearBtn')
+const numberRange = document.querySelector('.numberRange')
 
-displayGrid(app, 10);
+displayGrid(app, 8);
 
-// app.addEventListener('click',function(e){
-//   console.log('radi');
-//   const target = e.target;
-//   target.backgroundColor = 'red'
-//   console.log(target);
-// })
 
-// app.addEventListener('mouseover', function(e){
-// const target = e.target;
-// console.log(target);
-// target.backgroundColor = '#fff'
-// })
 

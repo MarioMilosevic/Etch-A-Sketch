@@ -3,10 +3,7 @@ export const displayGrid = (root, n) => {
     const div = document.createElement("div");
     root.appendChild(div);
     fillGrid(root, div, n);
-    div.addEventListener("mouseover", function () {
-      console.log("nesto");
-      div.style.backgroundColor = 'red'
-    });
+    fillDivs(div)
   }
 };
 
@@ -15,6 +12,9 @@ const fillGrid = (main, divs, n) => {
   divs.style.border = "1px solid black";
 };
 
-const fillDivs = () => {
-    
+const fillDivs = (element) => {
+    element.addEventListener("mouseover", function () {
+        console.log("nesto");
+        element.style.backgroundColor = 'red'
+      });
 }

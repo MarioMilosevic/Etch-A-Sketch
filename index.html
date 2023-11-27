@@ -7,16 +7,16 @@
     <title>Etch A Sketch</title>
   </head>
   <body>
-    <header>ETCH A SKETCH</header>
+    <header>ETCH A <span>SKETCH</span></header>
     <div class="main">
       <div class="controler">
-        <button class="circleBtn"></button>
-        <button class="btn">Color Mode</button>
-        <button class="btn">Rainbow Mode</button>
-        <button class="btn eraserBtn">Eraser</button>
-        <button class="btn">Clear</button>
-        <p>4 X 4</p>
-        <input type="range" min="4" max="64" step="4" />
+        <input type="color" value="#ff0000" id="circleBtn" class="circleBtn" />
+        <button id="colorModeBtn" class="btn">Color Mode</button>
+        <button id="rainbowModeBtn" class="btn">Rainbow Mode</button>
+        <button id="eraserBtn" class="btn eraserBtn">Eraser</button>
+        <button id="clearBtn" class="btn">Clear</button>
+        <p class="numberRange">4 x 4</p>
+        <input type="range" min="4" max="64" step="1" />
       </div>
       <div id="app" class="root"></div>
     </div>
