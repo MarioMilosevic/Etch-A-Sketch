@@ -1,9 +1,19 @@
 "use strict";
 const app = document.querySelector("#app");
-import { fillGrid } from "./helpers";
 import { displayGrid } from "./helpers";
 
+displayGrid(app, 10);
 
-displayGrid(app, 5);
+// app.addEventListener('click',function(e){
+//   console.log('radi');
+//   const target = e.target;
+//   target.backgroundColor = 'red'
+//   console.log(target);
+// })
 
+// app.addEventListener('mouseover', function(e){
+// const target = e.target;
+// console.log(target);
+// target.backgroundColor = '#fff'
+// })
 
