@@ -63,9 +63,13 @@ header span {
 }
 
 .circleBtn {
-  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: red;
   width: 50px;
   height: 50px;
+  overflow: hidden;
   /* align-self: center;
   background-color: red;
   width: 75px;
@@ -77,7 +81,15 @@ header span {
   color: white;
 }
 
+.range{
+  cursor: pointer;
+}
+
 .selected {
   color: black;
   background-color: white;
+}
+
+.hover{
+  transform: scale(1.1);
 }
