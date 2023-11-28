@@ -62,19 +62,14 @@ header span {
   padding: 5px;
 }
 
-.circleBtn {
+.colorBtn {
   border: none;
   cursor: pointer;
-  border-radius: 50%;
-  background-color: red;
+  border-radius: 10%;
+  background-color: black;
   width: 50px;
-  height: 50px;
-  overflow: hidden;
-  /* align-self: center;
-  background-color: red;
-  width: 75px;
-  height: 75px;
-  border-radius: 50px; */
+  height: 35px;
+  
 }
 
 .numberRange {
