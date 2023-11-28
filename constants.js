@@ -7,7 +7,8 @@ export function init(){
     const eraserBtn = document.querySelector("#eraserBtn");
     const clearBtn = document.querySelector("#clearBtn");
     const numberRange = document.querySelector(".numberRange");
+    const appChildren = app.children
     const textButtons = [colorModeBtn, rainbowModeBtn, eraserBtn, clearBtn];
     const buttons = [colorBtn, ...textButtons];
-    return {app, colorBtn, colorModeBtn, rainbowModeBtn, eraserBtn, clearBtn, numberRange, textButtons, buttons}
+    return {app, colorBtn, colorModeBtn, rainbowModeBtn, eraserBtn, clearBtn, numberRange, textButtons, buttons, appChildren}
 } 
