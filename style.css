@@ -74,9 +74,10 @@ header span {
 
 .numberRange {
   color: white;
+  font-size: 1.2rem;
 }
 
-.range{
+.inputRange{
   cursor: pointer;
 }
 

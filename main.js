@@ -13,7 +13,7 @@ const {
   numberRange,
   textButtons,
   buttons,
-  appChildren,
+  appChildren,inputRange
 } = init();
 
 displayGrid(app, 8);
@@ -70,3 +70,13 @@ textButtons.forEach((txtBtn) => {
     toggleClass(txtBtn.id);
   });
 });
+
+
+inputRange.addEventListener('change', function(){
+  numberRange.textContent = `${Math.round(Math.sqrt(inputRange.value))} X ${Math.round(Math.sqrt(inputRange.value))}`
+  app.textContent = ''
+  displayGrid(app, inputRange.value)
+})
+
+
+

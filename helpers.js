@@ -26,3 +26,4 @@ export const rainbowColor = () => {
   const rainbowColor = `rgb(${red}, ${green}, ${blue})`
   return rainbowColor
 }
+
