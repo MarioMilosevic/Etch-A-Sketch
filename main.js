@@ -1,16 +1,17 @@
 "use strict";
 import { displayGrid } from "./helpers";
-const app = document.querySelector("#app");
-const colorBtn = document.querySelector("#colorBtn");
-const colorModeBtn = document.querySelector("#colorModeBtn");
-const rainbowModeBtn = document.querySelector("#rainbowModeBtn");
-const eraserBtn = document.querySelector("#eraserBtn");
-const clearBtn = document.querySelector("#clearBtn");
-const numberRange = document.querySelector(".numberRange");
-
-const textButtons = [colorModeBtn, rainbowModeBtn, eraserBtn, clearBtn];
-const buttons = [colorBtn, ...textButtons];
-
+import { init } from "./constants";
+const {
+  app,
+  colorBtn,
+  colorModeBtn,
+  rainbowModeBtn,
+  eraserBtn,
+  clearBtn,
+  numberRange,
+  textButtons,
+  buttons,
+} = init();
 buttons.forEach((button) => {
   button.addEventListener("mouseover", function () {
     button.classList.add("hover");
@@ -34,11 +35,9 @@ function toggleClass(clickedButton) {
 }
 
 textButtons.forEach((txtBtn) => {
-  txtBtn.addEventListener('click', function(){
-    toggleClass(txtBtn.id)
-  })
+  txtBtn.addEventListener("click", function () {
+    toggleClass(txtBtn.id);
+  });
 });
 
 displayGrid(app, 8);
-
-
