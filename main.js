@@ -18,23 +18,25 @@ const {
 
 displayGrid(app, 8);
 
-const childrenArr = [...appChildren]
+const childrenArr = [...appChildren];
 console.log(childrenArr);
 
-colorModeBtn.addEventListener('click', function(){
-  childrenArr.forEach(child => fillDivs(child, ))
-})
+colorBtn.addEventListener("change", function () {
+  childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
+});
 
-rainbowModeBtn.addEventListener('click',function(){
-  console.log('reinbou');
- childrenArr.forEach(child => fillDivs(child, `${rainbowColor()}`)
- );
-})
+colorModeBtn.addEventListener("click", function () {
+  childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
+});
 
-eraserBtn.addEventListener('click',function(){
-  childrenArr.forEach(child => fillDivs(child, 'white'))
-})
+rainbowModeBtn.addEventListener("click", function () {
+  console.log("reinbou");
+  childrenArr.forEach((child) => fillDivs(child, `${rainbowColor()}`));
+});
 
+eraserBtn.addEventListener("click", function () {
+  childrenArr.forEach((child) => fillDivs(child, "white"));
+});
 
 buttons.forEach((button) => {
   button.addEventListener("mouseover", function () {
@@ -63,4 +65,3 @@ textButtons.forEach((txtBtn) => {
     toggleClass(txtBtn.id);
   });
 });
-
