@@ -19,7 +19,6 @@ const {
 displayGrid(app, 8);
 
 const childrenArr = [...appChildren];
-console.log(childrenArr);
 
 colorBtn.addEventListener("change", function () {
   childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
@@ -30,13 +29,19 @@ colorModeBtn.addEventListener("click", function () {
 });
 
 rainbowModeBtn.addEventListener("click", function () {
-  console.log("reinbou");
   childrenArr.forEach((child) => fillDivs(child, `${rainbowColor()}`));
 });
 
 eraserBtn.addEventListener("click", function () {
   childrenArr.forEach((child) => fillDivs(child, "white"));
 });
+
+clearBtn.addEventListener('click', function(){
+  childrenArr.forEach(child => {
+    child.removeEventListener('mouseover', fillDivs)
+    child.style.backgroundColor = "#fff"
+  })
+})
 
 buttons.forEach((button) => {
   button.addEventListener("mouseover", function () {
