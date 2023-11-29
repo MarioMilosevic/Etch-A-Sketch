@@ -3,6 +3,8 @@ import { displayGrid } from "./helpers";
 import { init } from "./constants";
 import { fillDivs } from "./helpers";
 import { randomColor } from "./helpers";
+import { fillAray } from "./helpers";
+
 const {
   app,
   colorBtn,
@@ -14,12 +16,16 @@ const {
   textButtons,
   buttons,
   appChildren,
-  inputRange,classButtons
+  inputRange,
+  classButtons,
+  
 } = init();
-
 displayGrid(app, 4);
 
-const childrenArr = [...appChildren];
+// App children se napuni (HTML kolekcija) nakon pozivanja displayGrida pa popunim array sa tim elementima
+
+let childrenArr = [...appChildren];
+
 
 colorBtn.addEventListener("input", function () {
   childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
@@ -28,6 +34,8 @@ colorBtn.addEventListener("input", function () {
   });
   colorModeBtn.classList.add("selected");
 });
+
+
 
 colorModeBtn.addEventListener("click", function () {
   childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
@@ -48,13 +56,18 @@ eraserBtn.addEventListener("click", function () {
 //   });
 // });
 
+const colorBtnClass = (arr, btn) => {
+  arr.forEach((el) => {
+    el.classList.remove("selected");
+  });
+  btn.classList.add("selected");
+} 
+
 clearBtn.addEventListener("click", function () {
   app.textContent = "";
-  classButtons.forEach(classbtn => {
-    classbtn.classList.remove('selected')
-  })
-  colorModeBtn.classList.add('selected')
+  colorBtnClass(classButtons, colorModeBtn)
   displayGrid(app, inputRange.value);
+  childrenArr = [...appChildren]
 });
 
 buttons.forEach((button) => {
@@ -87,6 +100,11 @@ classButtons.forEach((classBtn) => {
 
 inputRange.addEventListener("input", function (event) {
   numberRange.textContent = `${event.target.value} X ${event.target.value}`;
-  app.textContent = "";
+  app.textContent = ""
+  console.log(event.target.value);
   displayGrid(app, event.target.value);
+  // cu provjerit opet array !== arr
+  // fillAray(appChildren, childrenArr)
+  childrenArr = [...appChildren]
+  colorBtnClass(classButtons, colorModeBtn)
 });
