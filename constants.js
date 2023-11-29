@@ -1,9 +1,10 @@
-export function init(){
+import { randomColor } from "./helpers";
 
+export function init(){
     const app = document.querySelector("#app");
     const colorBtn = document.querySelector("#colorBtn");
     const colorModeBtn = document.querySelector("#colorModeBtn");
-    const rainbowModeBtn = document.querySelector("#rainbowModeBtn");
+    const randomModeBtn = document.querySelector("#randomModeBtn");
     const eraserBtn = document.querySelector("#eraserBtn");
     const clearBtn = document.querySelector("#clearBtn");
     const inputRange = document.querySelector('.inputRange')
@@ -11,7 +12,8 @@ export function init(){
     const numberRange = document.querySelector(".numberRange");
     const appChildren = app.children
     const childrenArr = [...appChildren]
-    const textButtons = [colorModeBtn, rainbowModeBtn, eraserBtn, clearBtn];
+    const classButtons = [colorModeBtn,randomModeBtn, eraserBtn ]
+    const textButtons = [colorModeBtn, randomModeBtn, eraserBtn, clearBtn];
     const buttons = [colorBtn, ...textButtons];
-    return {app, colorBtn, colorModeBtn, rainbowModeBtn, eraserBtn, clearBtn, numberRange, textButtons, buttons, appChildren, inputRange, inputRangeValue, childrenArr}
+    return {app, colorBtn, colorModeBtn, randomModeBtn, eraserBtn, clearBtn, numberRange, textButtons, buttons, appChildren, inputRange, inputRangeValue, childrenArr, classButtons}
 } 

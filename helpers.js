@@ -14,7 +14,6 @@ const fillGrid = (main, divs, n) => {
 
 export const fillDivs = (element, color) => {
     element.addEventListener("mouseover", function () {
-        console.log("nesto");
         element.style.backgroundColor = color
       });
 }

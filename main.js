@@ -7,14 +7,14 @@ const {
   app,
   colorBtn,
   colorModeBtn,
-  rainbowModeBtn,
+  randomModeBtn,
   eraserBtn,
   clearBtn,
   numberRange,
   textButtons,
   buttons,
   appChildren,
-  inputRange,
+  inputRange,classButtons
 } = init();
 
 displayGrid(app, 4);
@@ -33,7 +33,7 @@ colorModeBtn.addEventListener("click", function () {
   childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
 });
 
-rainbowModeBtn.addEventListener("click", function () {
+randomModeBtn.addEventListener("click", function () {
   childrenArr.forEach((child) => fillDivs(child, `${randomColor()}`));
 });
 
@@ -41,11 +41,20 @@ eraserBtn.addEventListener("click", function () {
   childrenArr.forEach((child) => fillDivs(child, "#FFFFFF"));
 });
 
+// clearBtn.addEventListener("click", function () {
+//   childrenArr.forEach((child) => {
+//     child.removeEventListener("mouseover", fillDivs);
+//     child.style.backgroundColor = "#fff";
+//   });
+// });
+
 clearBtn.addEventListener("click", function () {
-  childrenArr.forEach((child) => {
-    child.removeEventListener("mouseover", fillDivs);
-    child.style.backgroundColor = "#fff";
-  });
+  app.textContent = "";
+  classButtons.forEach(classbtn => {
+    classbtn.classList.remove('selected')
+  })
+  colorModeBtn.classList.add('selected')
+  displayGrid(app, inputRange.value);
 });
 
 buttons.forEach((button) => {
@@ -70,9 +79,9 @@ function toggleClass(clickedButton) {
   });
 }
 
-textButtons.forEach((txtBtn) => {
-  txtBtn.addEventListener("click", function () {
-    toggleClass(txtBtn.id);
+classButtons.forEach((classBtn) => {
+  classBtn.addEventListener("click", function () {
+    toggleClass(classBtn.id);
   });
 });
 
