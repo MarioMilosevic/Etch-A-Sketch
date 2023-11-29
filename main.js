@@ -18,7 +18,7 @@ const {
   appChildren,
   inputRange,
   classButtons,
-  
+  span
 } = init();
 displayGrid(app, 4);
 
@@ -32,9 +32,9 @@ colorBtn.addEventListener("input", function () {
   textButtons.forEach((btn) => {
     btn.classList.remove("selected");
   });
+  span.style.color = `${colorBtn.value}`
   colorModeBtn.classList.add("selected");
 });
-
 
 
 colorModeBtn.addEventListener("click", function () {
