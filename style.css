@@ -19,7 +19,8 @@ header {
   transform: translateX(-50%);
   text-align: center;
 }
-header span {
+
+.span{
   color: red;
   font-size: 4rem;
 }

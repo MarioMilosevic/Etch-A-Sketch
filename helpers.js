@@ -19,11 +19,11 @@ export const fillDivs = (element, color) => {
       });
 }
 
-export const rainbowColor = () => {
+export const randomColor = () => {
   let red = Math.floor(Math.random() *256)
   let green = Math.floor(Math.random() *256)
   let blue = Math.floor(Math.random() *256)
-  const rainbowColor = `rgb(${red}, ${green}, ${blue})`
-  return rainbowColor
+  const randomColor = `rgb(${red}, ${green}, ${blue})`
+  return randomColor
 }
 
