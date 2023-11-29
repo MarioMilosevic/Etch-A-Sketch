@@ -6,16 +6,15 @@ export const displayGrid = (root, n) => {
   }
 };
 
-
 export const fillAray = (collection, arr) => {
- return arr = [...collection]
-}
+  return (arr = [...collection]);
+};
 
 export const chooseColor = (el, color, arr) => {
-  el.addEventListener('click', function(){
-    arr.forEach(child => fillDivs(child, color))
-  })
-}
+  el.addEventListener("click", function () {
+    arr.forEach((child) => fillDivs(child, color));
+  });
+};
 const fillGrid = (main, divs, n) => {
   main.style.gridTemplate = `repeat(${n},1fr) / repeat(${n}, 1fr)`;
   divs.style.border = "1px solid black";
@@ -24,6 +23,7 @@ const fillGrid = (main, divs, n) => {
 
 export const fillDivs = (element, color) => {
   element.addEventListener("mouseover", function () {
+    console.log("mouseover");
     element.style.backgroundColor = color;
   });
 };
