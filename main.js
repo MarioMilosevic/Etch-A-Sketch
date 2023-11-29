@@ -3,8 +3,7 @@ import { displayGrid } from "./helpers";
 import { init } from "./constants";
 import { fillDivs } from "./helpers";
 import { randomColor } from "./helpers";
-import { fillAray } from "./helpers";
-
+import { buttonListeners } from "./helpers";
 const {
   app,
   colorBtn,
@@ -20,7 +19,7 @@ const {
   classButtons,
   span
 } = init();
-displayGrid(app, 4);
+displayGrid(app, 16);
 
 // App children se napuni (HTML kolekcija) nakon pozivanja displayGrida pa popunim array sa tim elementima
 
@@ -28,7 +27,7 @@ let childrenArr = [...appChildren];
 
 
 colorBtn.addEventListener("input", function () {
-  childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
+  buttonListeners(childrenArr, `${colorBtn.value}`)
   textButtons.forEach((btn) => {
     btn.classList.remove("selected");
   });
@@ -38,7 +37,7 @@ colorBtn.addEventListener("input", function () {
 
 
 colorModeBtn.addEventListener("click", function () {
-  childrenArr.forEach((child) => fillDivs(child, `${colorBtn.value}`));
+  buttonListeners(childrenArr, `${colorBtn.value}`)
 });
 
 randomModeBtn.addEventListener("click", function () {
@@ -46,7 +45,7 @@ randomModeBtn.addEventListener("click", function () {
 });
 
 eraserBtn.addEventListener("click", function () {
-  childrenArr.forEach((child) => fillDivs(child, "#FFFFFF"));
+  buttonListeners(childrenArr, '#FFFFFF')
 });
 
 // clearBtn.addEventListener("click", function () {
@@ -57,6 +56,7 @@ eraserBtn.addEventListener("click", function () {
 // });
 
 const colorBtnClass = (arr, btn) => {
+  // Vraca selected klasu color mode buttonu
   arr.forEach((el) => {
     el.classList.remove("selected");
   });
@@ -67,6 +67,7 @@ clearBtn.addEventListener("click", function () {
   app.textContent = "";
   colorBtnClass(classButtons, colorModeBtn)
   displayGrid(app, inputRange.value);
+
   childrenArr = [...appChildren]
 });
 
@@ -101,10 +102,7 @@ classButtons.forEach((classBtn) => {
 inputRange.addEventListener("input", function (event) {
   numberRange.textContent = `${event.target.value} X ${event.target.value}`;
   app.textContent = ""
-  console.log(event.target.value);
   displayGrid(app, event.target.value);
-  // cu provjerit opet array !== arr
-  // fillAray(appChildren, childrenArr)
   childrenArr = [...appChildren]
   colorBtnClass(classButtons, colorModeBtn)
 });

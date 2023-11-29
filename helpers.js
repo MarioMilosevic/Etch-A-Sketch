@@ -6,10 +6,6 @@ export const displayGrid = (root, n) => {
   }
 };
 
-export const fillAray = (collection, arr) => {
-  return (arr = [...collection]);
-};
-
 export const chooseColor = (el, color, arr) => {
   el.addEventListener("click", function () {
     arr.forEach((child) => fillDivs(child, color));
@@ -23,7 +19,6 @@ const fillGrid = (main, divs, n) => {
 
 export const fillDivs = (element, color) => {
   element.addEventListener("mouseover", function () {
-    console.log("mouseover");
     element.style.backgroundColor = color;
   });
 };
@@ -35,3 +30,10 @@ export const randomColor = () => {
   const randomColor = `rgb(${red}, ${green}, ${blue})`;
   return randomColor;
 };
+
+export const buttonListeners = (arr, color) => {
+  arr.forEach((el) => fillDivs(el, color));
+  };
+
+
+
