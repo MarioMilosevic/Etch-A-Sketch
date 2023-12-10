@@ -17,27 +17,24 @@ const {
   appChildren,
   inputRange,
   classButtons,
-  span
+  span,
 } = init();
 displayGrid(app, 16);
-
 // App children se napuni (HTML kolekcija) nakon pozivanja displayGrida pa popunim array sa tim elementima
-
+console.log(colorModeBtn);
 let childrenArr = [...appChildren];
 
-
 colorBtn.addEventListener("input", function () {
-  buttonListeners(childrenArr, `${colorBtn.value}`)
+  buttonListeners(childrenArr, `${colorBtn.value}`);
   textButtons.forEach((btn) => {
     btn.classList.remove("selected");
   });
-  span.style.color = `${colorBtn.value}`
+  span.style.color = `${colorBtn.value}`;
   colorModeBtn.classList.add("selected");
 });
 
-
 colorModeBtn.addEventListener("click", function () {
-  buttonListeners(childrenArr, `${colorBtn.value}`)
+  buttonListeners(childrenArr, `${colorBtn.value}`);
 });
 
 randomModeBtn.addEventListener("click", function () {
@@ -45,7 +42,7 @@ randomModeBtn.addEventListener("click", function () {
 });
 
 eraserBtn.addEventListener("click", function () {
-  buttonListeners(childrenArr, '#FFFFFF')
+  buttonListeners(childrenArr, "#FFF");
 });
 
 // clearBtn.addEventListener("click", function () {
@@ -61,14 +58,13 @@ const colorBtnClass = (arr, btn) => {
     el.classList.remove("selected");
   });
   btn.classList.add("selected");
-} 
+};
 
 clearBtn.addEventListener("click", function () {
   app.textContent = "";
-  colorBtnClass(classButtons, colorModeBtn)
+  colorBtnClass(classButtons, colorModeBtn);
   displayGrid(app, inputRange.value);
-
-  childrenArr = [...appChildren]
+  childrenArr = [...appChildren];
 });
 
 buttons.forEach((button) => {
@@ -100,9 +96,9 @@ classButtons.forEach((classBtn) => {
 });
 
 inputRange.addEventListener("input", function (event) {
-  numberRange.textContent = `${event.target.value} X ${event.target.value}`;
-  app.textContent = ""
-  displayGrid(app, event.target.value);
-  childrenArr = [...appChildren]
-  colorBtnClass(classButtons, colorModeBtn)
+  numberRange.textContent = `${this.value} X ${this.value}`;
+  app.textContent = "";
+  displayGrid(app, this.value);
+  childrenArr = [...appChildren];
+  colorBtnClass(classButtons, colorModeBtn);
 });
